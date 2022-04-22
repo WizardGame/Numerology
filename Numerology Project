@@ -1,0 +1,112 @@
+from tkinter import *
+# Nhập ngày tháng năm sinh
+name = input("Nhập họ và tên của bạn: ")
+day, month, year = input("Nhập ngày sinh của bạn: ").split(" ")
+date = day + "/" + month + "/" + year
+print(f"Họ và tên: {name}")
+print(f"Ngày sinh: {date}")
+# Chuyển giá trị vừa nhập thành int
+day = int(day)
+month = int(month)
+year = int(year)
+# Cộng ngày sinh thành 1 số
+if day >= 10:
+    day_list = list(map(int, str(day)))
+    total1 = 0
+    for i in range(len(day_list)):
+        total1 += int(day_list[i])
+    print(f"Ngày sinh của bạn là: {day} =)) {day_list[0]} + {day_list[1]} = {total1}")
+else:
+    total1 = day
+    print(f"Ngày sinh của bạn là: 0{day} =)) 0 + {day} = {total1}")
+
+# Cộng tháng sinh thành 1 số
+if month >= 10:
+    month_list = list(map(int, str(month)))
+    total2 = 0
+    for i in range(len(month_list)):
+        total2 += int(month_list[i])
+    print(f"Tháng sinh của bạn là: {month} =)) {month_list[0]} + {month_list[1]} = {total2}")
+else:
+    total2 = month
+    print(f"Tháng sinh của bạn là: 0{month} =)) 0 + {month} = {total2}")
+# Cộng năm sinh thành 1 số
+year_list = list(map(int, str(year)))
+total3 = 0
+so_chu_dao = 0
+for i in range(len(year_list)):
+    total3 += int(year_list[i])
+print(f"Năm sinh của bạn là: {year} =)) {year_list[0]} + {year_list[1]} + {year_list[2]} + {year_list[3]} = {total1}")
+# Tìm số chủ đạo
+total = total1 + total2 + total3
+total_list = list(map(int, str(total)))
+print(f"{total1} + {total2} + {total3} = {total}")
+for i in range(len(total_list)):
+    so_chu_dao += total_list[i]
+print(f"{total_list[0]} + {total_list[1]} = {so_chu_dao}")
+if so_chu_dao == 2:
+    print(f"Số chủ đạo của bạn là {so_chu_dao}")
+    print("""Đây là con số đặc biệt và rất hiếm, vì chỉ có duy nhất một số tổng 20 mới cho ra Con số chủ đạo 2.
+    Do đó, trên thực tế những người có Con số chủ đạo 2 ít hơn hẳn so với những Con số chủ đạo khác.
+    Số 2 nhìn chung là người nhạy cảm, khiêm tốn, đầy thiện chí giúp đỡ người khác.""")
+elif so_chu_dao == 3:
+    print(f"Số chủ đạo của bạn là {so_chu_dao}")
+    print("""Điểm nhấn của những người Số 3 là phần tư duy và lý luận.
+    Đối với những người Số 3, đầu óc nhanh nhạy, tính hài hước và tư duy linh hoạt
+    nói chung giúp họ dễ dàng thành công trong công việc.
+    Nhưng khi sống kém tích cực, người Số 3 dễ để lại ấn tượng là người trịch thượng,
+    gia trưởng hoặc thích chỉ đạo người khác.""")
+elif so_chu_dao == 4:
+    if total == 22:
+        print(f"Số chủ đạo của bạn là 22/{so_chu_dao}")
+        print("""Đây là con số đặc biệt, được trường phái Thần số học (Nhân số học) Pitago coi là “Con số vua”.
+Người mang Con số chủ đạo 22/4 có tiềm năng gần như vô hạn
+và thường đạt được hầu hết những mục đích có vẻ bất khả thi.""")
+    else:
+        print(f"Số chủ đạo của bạn là {so_chu_dao}")
+        print("""Người Số 4 có thiên hướng về “thực tế” hoặc “ thực hành” -
+họ thích bắt tay vào việc hơn là ngồi bàn luận về các giá trị việc đó mang lại.
+Chính sự thực tế này giúp những người Số 4 luôn tiến về phía trước.
+Họ thuộc nhóm những người nguyên tắc và đáng tin cậy nhất.
+Người Số 4 thường chìm đắm trong công việc và xao lãng những việc mang đến sự cân bằng cho cuộc sống của họ,
+đặc biệt là cuộc sống gia đình.""")
+elif so_chu_dao == 5:
+    print(f"Số chủ đạo của bạn là {so_chu_dao}")
+    print("""Người có Con số chủ đạo là 5 thường có khuynh hướng cố gắng thoát khỏi sự trói buộc,
+thường nhạy cảm và có nhu cầu bày tỏ cảm xúc.
+Phần lớn người Số 5 cảm thấy khó làm việc theo giờ giấc quy định nghiêm ngặt.
+Họ có trực giác rất tốt, với cảm xúc sâu sắc và tư duy nghệ thuật mạnh mẽ.""")
+elif so_chu_dao == 6:
+    print(f"Số chủ đạo của bạn là {so_chu_dao}")
+    print("""Chúng ta sẽ thấy người Số 6 ưu tú trong rất nhiều lĩnh vực sáng tạo, 
+từ ở nhà cho đến đấu trường quốc tế.Họ mang một trọng trách lớn trong cuộc sống, 
+thứ đòi hỏi ở họ sự tận tâm sâu sắc.Tất cả những người Số 6 đều có khả năng thiên phú này, 
+nhưng họ thường bị gánh nặng trách nhiệm làm cho bất an và lo lắng,từ đó mắc kẹt trong áp lực căng thẳng.""")
+elif so_chu_dao == 7:
+    print(f"Số chủ đạo của bạn là {so_chu_dao}")
+    print("""Một trong những đặc điểm độc đáo ở những người Số 7 là họ được học hỏi theo cách riêng của mình.
+Không dừng lại ở việc tiếp nhận các chỉ dẫn tối thiểu từ người khác, 
+người Số 7 khát khao được học bằng cách tự trải nghiệm.
+Chính vì điều này, người Số 7 thường phải hy sinh ít nhất một trong ba khía cạnh của cuộc sống:
+sức khỏe, tình yêu, tiền tài.""")
+elif so_chu_dao == 8:
+    print(f"Số chủ đạo của bạn là {so_chu_dao}")
+    print("""Những người mang Số 8 chủ đạo là những người coi sự độc lập là một trong những yếu tố quan trọng hàng đầu trong cuộc sống.
+Họ có thể là những người khá phức tạp, sở hữu cá tính mạnh, sức mạnh và trí tuệ hơn người.
+Nhưng về khả năng biểu đạt lòng biết ơn và sự trân trọng thì người Số 8 cảm thấy rất khó thể hiện.""")
+elif so_chu_dao == 9:
+    print(f"Số chủ đạo của bạn là {so_chu_dao}")
+    print("""So với những nhóm khác, người mang Con số chủ đạo 9 sẽ nhân gấp ba lần yếu tố: hoài bão, trách nhiệm và lý tưởng.
+Họ luôn đặt yếu tố con người lên hàng đầu.Người Số 9 luôn tự cảm thấy mình đầy trách nhiệm.
+Họ phù hợp với nghệ thuật và các lĩnh vực nhân văn hơn là với khoa học hay thương mại.""")
+elif so_chu_dao == 10:
+    print(f"Số chủ đạo của bạn là {so_chu_dao}")
+    print("""Cuộc sống của người Số 10 có hai đặc điểm nổi trội: khả năng thích nghi và khả năng thay đổi.
+Tính linh hoạt của họ có thể hỗ trợ người khác rất nhiều trong việc thích ứng với các thay đổi trong cuộc sống.
+Khi sống tích cực, họ có thể là người rất quảng giao, được yêu thích; nhưng khi sống tiêu cực,
+    họ có thể là những cá nhân lạc lối, bất an và lao đao trên đường đời.""")
+elif so_chu_dao == 11:
+    print(f"Số chủ đạo của bạn là {so_chu_dao}")
+    print("""Con số chủ đạo 11 có một trường năng lượng tâm linh đặc biệt mạnh mẽ, 
+giúp những người mang Con số chủ đạo này có tiềm năng phi thường để phát triển nhận thức ở Thể Siêu thức. 
+Đáng tiếc là phần lớn những người Số 11 lại không đủ khả năng phát huy tiềm năng đó. """)
